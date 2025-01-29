@@ -5,28 +5,18 @@
 <html>
 <head>
     <title>Hospital Management System</title>
-</head>
-<body>
-    <h2>Welcome to the Hospital Management System</h2>
-    <nav>
-        <ul>
-            <li><a href="register.php">Register</a></li>
-            <li><a href="login.php">Login</a></li>
-        </ul>
-    </nav>
-</body>
-</html>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
+</head>
 <?php
 // src/register.php
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Register</title>
-</head>
 <body>
-    <h2>Register</h2>
+   
+<h2>Welcome to the Hospital Management System</h2>
+<h2>            <br><br></h2>
     <form action="register_process.php" method="POST">
         <label>First Name:</label>
         <input type="text" name="first_name" required><br>
