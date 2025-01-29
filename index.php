@@ -10,7 +10,7 @@
     <h2>Welcome to the Hospital Management System</h2>
     <nav>
         <ul>
-            <li><a href="register.php">Register</a></li>
+            <li><a href="registration.php">Register</a></li>
             <li><a href="login.php">Login</a></li>
         </ul>
     </nav>
