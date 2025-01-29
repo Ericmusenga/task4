@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  yourgroupnumber_web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+    networks:
+      - yourgroupnumber_network
+    
+  yourgroupnumber_db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: project_db
+    volumes:
+      - yourgroupnumber_db_data:/var/lib/mysql
+    networks:
+      - yourgroupnumber_network
+    
+  yourgroupnumber_phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: yourgroupnumber_db
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - "8080:80"
+    networks:
+      - yourgroupnumber_network
+    
+networks:
+  yourgroupnumber_network:
+    driver: bridge
+
+volumes:
+  yourgroupnumber_db_data:
+    driver: local
